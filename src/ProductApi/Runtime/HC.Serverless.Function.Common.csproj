@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    华为云 FunctionGraph C# 运行时的上下文实现引用的是
+    'HC.Serverless.Function.Common, Version=1.0.0.0, PublicKeyToken=null'
+    （缺失时函数报 "Could not load file or assembly" 实测错误）。
+    源码按目标框架用预处理指令选择命名空间/程序集名：
+    net6.0+ -> OpenTelekomCloud.*（面向 OTC），更早目标 -> HC.*。
+    因此本工程目标 netstandard2.0，走 #else 分支得到 HC.* 命名空间，
+    输出 HC.Serverless.Function.Common.dll（netstandard2.0 可被 net8.0 函数直接引用）。
+    程序集不强命名（运行时期望 PublicKeyToken=null），版本固定 1.0.0.0。
+    说明见 NOTICE.md。
+  -->
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>HC.Serverless.Function.Common</AssemblyName>
+    <RootNamespace>HC.Serverless.Function.Common</RootNamespace>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <Version>1.0.0</Version>
+    <Deterministic>true</Deterministic>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <DebugType>portable</DebugType>
+    <NuGetAudit>false</NuGetAudit>
+  </PropertyGroup>
+
+</Project>

@@ -1,0 +1,11 @@
+{
+  "function.zip": "f0bc4ca967310af9436ab6b3ee4efbf6eebd7889ce10d155ed7fed2ee5d0be07",
+  "entries": [
+    "HC.Serverless.Function.Common.dll",
+    "HC.Serverless.Function.Common.pdb",
+    "ProductApi.deps.json",
+    "ProductApi.dll",
+    "ProductApi.pdb",
+    "ProductApi.runtimeconfig.json"
+  ]
+}
